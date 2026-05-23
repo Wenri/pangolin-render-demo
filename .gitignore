@@ -1,0 +1,4 @@
+.pixi/
+build/
+output.png
+output.ppm

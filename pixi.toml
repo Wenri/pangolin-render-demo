@@ -1,0 +1,19 @@
+[workspace]
+authors = ["wenri <gongbingchen@gmail.com>"]
+channels = ["conda-forge"]
+name = "pangolin-render"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[dependencies]
+pangolin-opengl = ">=0.9.5"
+cmake           = ">=3.28"
+cxx-compiler    = "*"
+ninja           = "*"
+eigen           = "*"
+
+[tasks]
+configure = "cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release"
+build     = { cmd = "cmake --build build", depends-on = ["configure"] }
+render    = { cmd = "./build/render_to_ppm output.ppm", depends-on = ["build"] }
+clean     = "rm -rf build output.ppm output.png"

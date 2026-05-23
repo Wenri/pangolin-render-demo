@@ -3,6 +3,8 @@
 A minimal headless 3D renderer built on [Pangolin](https://github.com/stevenlovegrove/Pangolin).
 Draws a coloured cube via EGL (no X server needed) and writes the result to a PPM image.
 
+![example output](docs/example.png)
+
 The whole thing is ~40 lines of C++ plus a pixi manifest — useful as a starting point
 for any "render OpenGL to image, no display" pipeline (batch rendering, CI snapshots,
 synthetic dataset generation, etc.).
